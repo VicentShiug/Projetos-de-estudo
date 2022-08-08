@@ -109,4 +109,12 @@ a.link-list{
     margin-bottom: 30px;
     
 }
+.card-body{
+    align-items: center;
+}
+
+.bottons{
+    display: grid;
+    
+}
 

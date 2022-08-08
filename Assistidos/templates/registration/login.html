@@ -8,16 +8,20 @@
     <div class="col-md-4 offset-md-4">
         <div class="card auth-card">
             <div class="card-body">
-                <h4 class="card-tittle text-center"> Entrar no Assistidos</h4>
+                <h4 class="card-tittle text-center aa"> Entrar no Assistidos</h4>
+                
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ next }}">
 
-                <form method="post">
-                    {% csrf_token %}
-                    <input type="hidden" name="next" value="{{ next }}">
+                            {{ form|crispy }}
+                        <div class="col-md bottons">
+                            <button type="submit" class="btn btn-primary" style="margin-top: 8px;">Entrar</button>
 
-                    {{ form|crispy }}
-                    <button type="submit" class="btn btn-primary btn-block">Entrar</button>
-
-                </form>
+                            <a href="/accounts/register" class="btn btn-primary" style="margin-top: 8px;">Registrar</a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
