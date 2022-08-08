@@ -1,2 +1,2 @@
 Apenas alguns projetos feitos para estudos em Django/css/html.
-São dois projetos diferentes
+São dois projetos diferentes, os dois teem a mesma base porem feitos de formas diferentes...
