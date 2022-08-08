@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+{% block title %}Adicionar Título{% endblock %}
+
+{% block content%}
+ <div class="offset-1 col-10 list-div">
+    <h1>Adicione o Título: </h1>
+    <form method="POST">
+        {% csrf_token%}
+        {{form|crispy }}
+        <input type="submit" class="btn btn-success" style="margin-top: 12px; margin-bottom: 12px;" value="Adicionar a lista">
+    </form>
+ </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+
+{% block title %}Minha lista{% endblock %}
+
+{% block content%}
+ <div class="offset-1 col-10 list-div">
+    <h1>Lista</h1>
+
+    <div class="row">
+        <div class="col-5 search-div">
+            <form method="GET" class="form-inline" id="search-form" autocomplete="off">
+                <input class="form-control" type="text" id="titulo" name="titulo" placeholder="Digite o título para buscar" value="{{ request.GET.titulo }}">
+                <input style="margin-top: 5px;" type="submit" class="btn btn-primary" value="Buscar" id="search-btn">
+            </form>
+        </div>
+    </div>
+    <div class="col-2 add-div">
+        <a href="{% url 'adicionar' %}" class="btn btn-primary btn-addbtn">Adicionar Título a lista</a>
+    </div>    
+
+    <ul class="list-lista">
+        {% for lista in listas %}
+        <li class="list-item">
+            <span><a href="/list/{{lista.id}}" class="link-list">{{lista.titulo}}</a></span>
+            <span><a class="btn btn-danger botadd" href="{% url 'delete' lista.id%}"onclick="return confirm('Tem certeza que deseja deletar este título?')">Excluir</a></span>
+            <span><a class="btn btn-warning botedt" href="{% url 'editar' lista.id %}">Editar</a></span>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="pagination">
+        <span class="step-links">
+            {% if listas.has_previous %}
+                <a class="btn btn-secondary esquerda" href="?page={{listas.previous_page_number}}">&#8592;</a> 
+            {% endif %}
+
+            {% if listas.paginator.num_pages%}
+            <span class="current">
+                {{ listas.number }} de {{ listas.paginator.num_pages }}
+            </span>
+            {% endif %}
+
+            {% if listas.has_next %}
+                <a class="btn btn-secondary direita" href="?page={{listas.next_page_number}}">&#8594;</a> 
+            {% endif %}
+        </span>
+    </div>
+ </div>
+{% endblock %}

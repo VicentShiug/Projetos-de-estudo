@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+
+{% block title %}Minha lista{% endblock %}
+
+{% block content%}
+ <div class="offset-1 col-10 list-div">
+    <h1>{{lista.titulo}}</h1>
+    <p>{{lista.descricao}}</p>
+    <p>{{lista.status}}</p>
+    <p>{{lista.tipo}}</p>
+ </div>
+{% endblock %}

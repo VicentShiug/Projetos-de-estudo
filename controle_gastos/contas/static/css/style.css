@@ -1,0 +1,34 @@
+h1 {
+    color: rgb(255, 0, 0);
+}
+
+h2 {
+    color: rgb(255, 0, 0);
+}
+
+.container-fluid {
+    padding: 100;
+}
+
+.auth-card{
+    padding: 0;
+    top: 2cm;
+}
+
+.collapse-navbar{
+    list-style: none;
+}
+
+.nav-link{
+    list-style: 0;
+    align-self: center;
+}
+
+.nav-item{
+    display: inline-block;
+}
+
+.aateste{
+    color: rgb(0, 0, 0);
+    background-color: aqua;
+}

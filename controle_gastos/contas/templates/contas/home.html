@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title%} Home {% endblock %}
+
+{% block content %}
+<h1 style="text-align: center;">Seja bem vindo</h1>
+
+<p>Agora são <b>{{ now }}</b></p>
+<p>Agora vai {{entrada.data}} </p>
+
+<ul>
+{% for transacao in transacoes %}
+
+    {% if transacao == "t1" %}
+        <li><b>{{transacao}}</b></li>
+    {% else %}
+        <li>{{transacao}}</li>
+    {% endif %}
+
+{% endfor %}
+
+aa{{transacao}}
+</ul>
+
+
+{% endblock %}

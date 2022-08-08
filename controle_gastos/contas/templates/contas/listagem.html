@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %} Listagem de dados {% endblock %}
+
+{% block content %}
+
+
+<h2>Listagem de Entradas</h2>
+
+<div class="col-sm aateste"> 
+  aa
+</div>
+
+<a class="btn btn-success" href="{% url 'url_entrada'%}">Adicionar Entrada</a>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Descrição</th>
+        <th scope="col">Data</th>
+        <th scope="col"class="col-sm-4" >Valor</th>
+        <th scope="col">Opções</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+    {% for entrada in entradas %}
+            <th>{{ entrada.descricao}}</th>
+            <td>{{ entrada.data }}</td>
+            <td>{{ entrada.valor }}</td>
+            <td>
+                <a class="btn btn-danger" href="{% url 'url_deletare' entrada.id %}"onclick="return confirm('Tem certeza que deseja exluir essa transação?')">Deletar</a>
+                <a href="{% url 'url_updatee' entrada.id %}" class="btn btn-warning">Editar</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<h2>Listagem</h2>
+<a class= 'btn btn-success'href="{% url 'url_form' %}" >Adicionar</a>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Descrição</th>
+        <th scope="col">Data</th>
+        <th scope="col">Valor</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if mesagens %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li {% if message.tags %} class="alert alert-{{message.tags}}"{% endif %}>{{message}}</li>
+        {%endfor%}
+      </ul>
+      {% endif %}
+    {% for transacao in transacoes %}
+      <tr>
+        <th>{{transacao.descricao}}</th>
+        <td>{{transacao.data }}</td>
+        <td>R${{ transacao.valor}}</td>
+        <td>{{ transacao.categoria }}</td>
+        <td>
+            <a class="btn btn-danger" href="{% url 'url_deletar' transacao.id %}"onclick="return confirm('Tem certeza que deseja exluir essa transação?')">Deletar</a>
+            <a href="{% url 'url_update' transacao.id %}" class="btn btn-warning">Editar</a>
+        </td>
+      </tr>
+    {%endfor%}
+    </tbody>
+</table>
+            
+</div>
+{% endblock %}

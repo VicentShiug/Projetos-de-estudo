@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Adicionando Entrada {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    
+    <h2>Adicionando Entrada de Valor</h2>
+<form method="POST">
+    {% csrf_token %}
+
+    {{ entrada|crispy}}
+
+    <button class="btn btn-success" type="submit">Salvar</button>
+    <a class= 'btn btn-danger'href="{% url 'url_listagem' %}" >Cancelar</a>
+
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,112 @@
+.container-fluid{
+    padding: 0;
+}
+
+/* NavBar */
+
+.navbar{
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+}
+/* .nav{ */
+/*  */
+    /* margin: auto; */
+/* } */
+.navbar-brand{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+a.nav-link{
+    color: #333;
+    letter-spacing: 1px;
+}
+
+/* Barra de pesquisa*/
+
+.add-div{
+    display: inline-block;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+}
+
+/* Search*/
+
+.search-div {
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin: auto;
+    display: inline-block;
+}
+
+/* Lista */
+
+.list-div{
+    padding: 0;
+}
+
+.list-lista{
+    padding-left: 0;
+    padding-top: 10px;
+}
+
+.list-item{
+    list-style: none;
+    font-size: 20px;
+    height: 58px;
+    padding-top: 10px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.botadd, .botedt{
+    margin: 5px;
+    float: right;
+    padding-top: 50%;
+
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    height: 300px;
+    border-top: 2px solid #202020;
+}
+
+footer p {
+    color: aliceblue;
+    text-align: center;
+    top: 50%;
+    position: relative;
+}
+
+
+a.link-list{
+    text-decoration: none;
+    color: #333;
+}
+
+/* Paginação */
+
+.pagination {
+    margin-bottom: 20px;
+}
+.step-links{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step-links .current {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Login */
+.auth-card {
+    margin-bottom: 30px;
+    
+}
+
