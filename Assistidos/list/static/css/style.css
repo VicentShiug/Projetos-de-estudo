@@ -30,6 +30,9 @@ a.nav-link{
     padding: 8px;
     border-radius: 5px;
     margin-right: 25px;
+    padding-left: 0px;
+    padding-top: 20px;
+    padding-bottom: 2px;
 }
 
 /* Search*/
@@ -40,6 +43,19 @@ a.nav-link{
     margin-bottom: 15px;
     margin: auto;
     display: inline-block;
+}
+
+#filter{
+    display: inline-block;
+    width: 200px;
+    margin-left: 10px;
+}
+
+/* filter */
+
+.filter-div{
+    margin-bottom: 15px;
+    padding: 0;
 }
 
 /* Lista */
@@ -57,8 +73,30 @@ a.nav-link{
     list-style: none;
     font-size: 20px;
     height: 58px;
+    padding: 0px 15px;
     padding-top: 10px;
-    border-bottom: 1px dashed #ccc;
+    /* border-bottom: 1px solid #ccc; */
+    background-color: rgb(217, 237, 255);
+    border-radius: 3px;
+    margin-bottom: 1px;
+}
+
+.list-item.assis{
+    background-color: rgb(215, 255, 227);
+}
+
+.list-item.vist{
+    background-color: rgb(255, 220, 220);
+}
+.link-list.status{
+    float: right; 
+    margin-top: 6px;
+    border: 2px;
+    border-radius: 3px;
+    background-color: #afcfff;
+    padding: .200rem .75rem;
+
+
 }
 
 .botadd, .botedt{

@@ -13,6 +13,16 @@
                 <input style="margin-top: 5px;" type="submit" class="btn btn-primary" value="Buscar" id="search-btn">
             </form>
         </div>
+        <div class="col-12 filter-div">
+            <span>Filtar por:</span>
+            <select name="filter" id="filter" class="form-control">
+                <option value="">Escolhar uma opção</option>
+                <option value="A Assistir">A Assistir</option>
+                <option value="Assistindo">Assistindo</option>
+                <option value="Assistido">Assistido</option>
+            </select>
+
+        </div>
     </div>
     <div class="col-2 add-div">
         <a href="{% url 'adicionar' %}" class="btn btn-primary btn-addbtn">Adicionar Título a lista</a>
@@ -20,11 +30,20 @@
 
     <ul class="list-lista">
         {% for lista in listas %}
-        <li class="list-item">
-            <span><a href="/list/{{lista.id}}" class="link-list">{{lista.titulo}}</a></span>
-            <span><a class="btn btn-danger botadd" href="{% url 'delete' lista.id%}"onclick="return confirm('Tem certeza que deseja deletar este título?')">Excluir</a></span>
-            <span><a class="btn btn-warning botedt" href="{% url 'editar' lista.id %}">Editar</a></span>
-        </li>
+
+        {% if lista.status == 'A Assistir' %}
+            <li class="list-item">
+        {% elif lista.status == 'Assistindo' %}
+            <li class="list-item assis">
+        {% else %}
+            <li class="list-item vist">
+        {% endif %}
+                <span><a href="/list/{{lista.id}}" class="link-list">{{lista.titulo}}</a></span>
+                <span><a class="btn btn-danger botadd" href="{% url 'delete' lista.id%}"onclick="return confirm('Tem certeza que deseja deletar este título?')">Excluir</a></span>
+                <span><a class="btn btn-warning botedt" href="{% url 'editar' lista.id %}">Editar</a></span>
+                <span><a href="{% url 'changestatus' lista.id %}" class="link-list status">{{lista.status}}</a></span>
+
+            </li>
         {% endfor %}
     </ul>
     <div class="pagination">
