@@ -3,11 +3,36 @@
 {% block title %}Minha lista{% endblock %}
 
 {% block content%}
- <div class="offset-1 col-10 list-div">
 
-    <h1>{{lista.titulo}}aa</h1>
+    <div class="container-fluid dashboard">
+        <h1 style="text-align:center">Aqui você pode ver o seu progresso com sua lista geral!</h1>
 
-    aaa
+        <div class="col-2 dashboard-box" id='dashboard-lastdays'>
+            <h4>Visto nos útimos 30 dias</h4>
+            <span>{{assistidorecent}}</span>
+        </div>
 
- </div>
+        <a href="http://127.0.0.1:8000/?filter=A%20Assistir">
+            <div class="col-2 dashboard-box" id='dashboard-aassistir'>
+                <h4>Para assistir</h4>
+                <span>{{ listaassistir }}</span>
+            </div>
+        </a>
+
+        <a href="http://127.0.0.1:8000/?filter=Assistindo">
+        <div class="col-2 dashboard-box" id='dashboard-assistindo'>
+            <h4>Assistindo</h4>
+            <span>{{ listassistindo }}</span>
+        </div>
+        </a>
+        <a href="http://127.0.0.1:8000/?filter=Assistido">
+        <div class="col-2 dashboard-box" id='dashboard-assistido'>
+            <h4>Visto</h4>
+            <span>{{ listassistido }}</span>
+        </div>
+        </a>
+
+    </div>
+
+
 {% endblock %}
